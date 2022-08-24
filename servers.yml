@@ -130,3 +130,9 @@ Resources:
         ListenerArn: !Ref Listener
         Priority: 1
 
+Outputs:
+  WebAppLBDNSName:
+    Description: DNS name or Public URL of the Load Balancer
+    Value: !Join [ "", [ 'http://', !GetAtt WebAppLB.DNSName ]]
+    Export:
+        Name: URL
